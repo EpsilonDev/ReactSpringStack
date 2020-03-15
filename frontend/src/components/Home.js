@@ -18,7 +18,7 @@ class Home extends Component {
         <Route path="/panier" component={() => <Panier user={this.props.user}></Panier>}></Route>
         <br></br>
 
-      </Router>
+    </Router>
     );
   }
 }

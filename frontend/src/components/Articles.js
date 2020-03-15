@@ -21,7 +21,7 @@ const Article = props => (
       />
       <MDBCardBody>
     <MDBCardTitle className="card-title">{props.article.designation}</MDBCardTitle>
-    <div style={{ color: "teal", textAlign: "left" }}>{props.article.description}</div>
+    <div style={{textAlign: "left" }}>{props.article.description}</div>
         {
           <div>
             <MDBCardText style={{ textAlign: "center" }}>
@@ -136,9 +136,8 @@ export class ArticlesPage extends Component {
 
     axios
       .post("http://localhost:8080/addCommande", commande)
-      .then(res => alert(res.data))
+      .then(res => alert("Commande enregistré !"))
       .catch(() => alert("Erreur d'ajout !"));
-        console.log("Commande enregistré !");
         //alert("Commande enregistré !")
   }
 

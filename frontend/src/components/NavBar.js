@@ -9,7 +9,7 @@ class NavBar extends Component {
         return (
             <div>
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                    <a href="#" className="navbar-brand" style={{fontFamily:'Montserrat',color:"white"}}>My Shop</a>
+                    <a href="#" className="navbar-brand" style={{fontFamily:'Baloo Thambi 2', fontSize:'30px', color:"white"}}>My Shop</a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

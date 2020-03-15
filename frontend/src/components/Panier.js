@@ -54,7 +54,7 @@ class CommandePage extends Component {
   deleteCommande(id) {
     axios
       .delete("http://localhost:8080/deleteCommande/" + id)
-      .then(res => console.log(res.data));
+      .then(res => alert("Commande supprimé !"));
 
     this.setState({
       commandes: this.state.commandes.filter(i => i.numCommande !== id)
