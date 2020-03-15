@@ -7,7 +7,8 @@ import {
   MDBCardBody,
   MDBCardTitle,
   MDBIcon,
-  MDBCardText
+  MDBCardText,
+  MDBInput
 } from "mdbreact";
 
 const Article = props => (
@@ -63,11 +64,20 @@ export class ArticlesPage extends Component {
     super(props);
 
     this.onClickAddCommande = this.onClickAddCommande.bind(this);
+    this.onChangeSearch = this.onChangeSearch.bind(this);
 
     this.state = {
         articles: [],
-        categorie: []
+        categorie: [],
+        search: ""
     };
+  }
+
+  onChangeSearch(e) {
+    this.setState({
+      search: e.target.value
+    })
+    console.log(this.state.search);
   }
 
   componentDidMount() {
@@ -98,7 +108,9 @@ export class ArticlesPage extends Component {
   }
 
   articlesList() {
-      return this.state.articles.map((currentArticle, i) => {
+      return this.state.articles
+      .filter(article => article.designation.toLowerCase().includes(this.state.search.toLowerCase()))
+        .map((currentArticle, i) => {
           return(
               <Article
                 article={currentArticle}
@@ -133,6 +145,18 @@ export class ArticlesPage extends Component {
   render() {
     return (
       <div className="container">
+            <MDBInput
+              background
+              label="Rechercher"
+              group
+              type="text"
+              validate
+              error="wrong"
+              success="right"
+              value={this.state.search}
+              onChange={this.onChangeSearch}
+            >  
+            </MDBInput>
         <br></br>
         {this.articlesList()}
       </div>

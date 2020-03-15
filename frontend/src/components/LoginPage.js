@@ -30,7 +30,7 @@ export default class LoginPage extends Component {
   componentDidMount() {
     this.setState({
       username: "oura.dbk@gmail.com",
-      password: "ouahou123"
+      password: "ourahou123"
     });
   }
 
@@ -59,10 +59,10 @@ export default class LoginPage extends Component {
     axios.get("http://localhost:8080/clientByEmail/" + this.state.username)
       .then(res => {
         console.log(res.data);
-        if (res.data == null) alert("Wrong username or password");
+        if (res.data == null) alert("Email ou Mot de Passe incorrecte");
         else {
           if (res.data.password !== this.state.password) {
-            alert("Email ou Mot de Passe incorrecte !");
+            alert("Mot de Passe incorrecte !");
           } else {
             this.props.login(res.data);
             alert("Bienvenu " + this.state.username +"!");
@@ -81,16 +81,16 @@ export default class LoginPage extends Component {
             <MDBCard>
               <MDBCardBody>
                 <form onSubmit={this.onSubmit}>
-                  <p className="h4 text-center py-4 cyan-text App">
+                  <p className="h4 text-center py-4 purple-text App">
                     <MDBIcon
                       icon="user-circle"
                       size="2x"
-                      className="cyan-text mb-2"
+                      className="purple-text mb-2"
                     />
                     <br />
                     SE CONNECTER
                   </p>
-                  <div className="cyan-text App">
+                  <div className="purple-text App">
                     <MDBInput
                       background
                       label="Email"
@@ -113,7 +113,7 @@ export default class LoginPage extends Component {
                     />
                   </div>
                   <div className="text-center py-4 mt-3 App">
-                    <MDBBtn color="cyan" type="submit">
+                    <MDBBtn color="purple" type="submit">
                       Se Connecter
                     </MDBBtn>
                   </div>

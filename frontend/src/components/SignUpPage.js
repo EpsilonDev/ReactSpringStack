@@ -137,16 +137,16 @@ export default class SignUpPage extends Component {
             <MDBCard>
               <MDBCardBody>
                 <form >
-                  <p className="h4 text-center py-4 cyan-text App">
+                  <p className="h4 text-center py-4 purple-text App">
                     <MDBIcon
-                      icon="user-circle"
+                      icon="sign-in-alt"
                       size="2x"
-                      className="cyan-text mb-2"
+                      className="purple-text mb-2"
                     />
                     <br />
                     S'Inscrire
                   </p>
-                  <div className="cyan-text App">
+                  <div className="purple-text App">
                   <MDBInput
                       background
                       label="Nom"
@@ -236,7 +236,7 @@ export default class SignUpPage extends Component {
 
                   </div>
                   <div className="text-center py-4 mt-3 App">
-                    <MDBBtn color="cyan" type="submit" onClick={this.onSubmit}>
+                    <MDBBtn color="purple" type="submit" onClick={this.onSubmit}>
                       S'Incrire
                     </MDBBtn>
                   </div>
